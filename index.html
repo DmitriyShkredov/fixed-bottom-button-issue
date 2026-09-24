@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Safari Safe Area Button Test</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <input id="unsafe" type="radio" name="mode" checked />
+    <input id="safe" type="radio" name="mode" />
+
+    <main class="app">
+      <section class="hero">
+        <div class="eyebrow">iPhone Safari test</div>
+        <h1>Нижняя кнопка</h1>
+        <p class="lead">
+          Прокрути страницу и переключи режим. Красная штриховка показывает
+          область safe area, если Safari ее отдает.
+        </p>
+      </section>
+
+      <div class="switcher" aria-label="Режим положения кнопки">
+        <label for="unsafe">bottom: 15px</label>
+        <label for="safe">safe area + 15px</label>
+      </div>
+
+      <section class="stack" aria-label="Тестовый контент">
+        <article class="card">
+          <h2>Проверка в реальном Safari</h2>
+          <p>
+            Открой страницу на iPhone, добавь ее в Safari или запусти через
+            локальный адрес. В первом режиме кнопка должна прижиматься к самому
+            краю экрана.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Что смотреть</h2>
+          <p>
+            Если нижняя системная зона перекрывает кнопку, текст или тень
+            окажутся слишком близко к индикатору Home. Во втором режиме кнопка
+            поднимется на значение inset.
+          </p>
+        </article>
+
+        <div class="metrics">
+          <div class="metric">
+            <strong>0px</strong>
+            <span>отступ в опасном режиме</span>
+          </div>
+          <div class="metric">
+            <strong>env()</strong>
+            <span>отступ в безопасном режиме</span>
+          </div>
+        </div>
+
+        <article class="card">
+          <h2>Длинный контент</h2>
+          <p>
+            Этот блок нужен, чтобы страница скроллилась и можно было проверить,
+            не меняется ли поведение фиксированной кнопки при движении адресной
+            строки Safari.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Еще один экран</h2>
+          <p>
+            На iPhone особенно важно тестировать и портретную, и альбомную
+            ориентацию. В альбомной ориентации safe area может стать заметнее по
+            бокам.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Контрольная точка</h2>
+          <p>
+            Если включить режим safe area и кнопка все равно кажется низкой,
+            проверь, что в meta viewport есть `viewport-fit=cover`.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <div class="bottom-guide">safe area marker</div>
+    <div class="safe-note" aria-hidden="true"></div>
+    <button
+      class="fixed-bar"
+      type="button"
+      aria-label="Фиксированная тестовая кнопка"
+    ></button>
+  </body>
+</html>
