@@ -248,7 +248,11 @@ h1 {
 }
 
 #unsafe:checked ~ .fixed-bar {
-  bottom: 0px;
+  bottom: 15px;
+}
+
+#safe:checked ~ .fixed-bar {
+  bottom: max(15px, env(safe-area-inset-bottom));
 }
 
 .safe-note {
